@@ -1,5 +1,5 @@
 # Pseudo Code
-
+```
 def main():
   - get height and reverse from user input
   - get width = height * 2 - 1
@@ -17,7 +17,7 @@ def pyramid(height, width):
   
 def draw(data, reverse=False):
     - data is 2-dimentional array
-  
+```
 
 
 ------------------
