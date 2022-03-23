@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+	Height of Pyramid: <input type='text' id="height" >
+<button onclick="build()"> Build </button>
+<h3 id='text'> </h3>
+
+<script>
+var height;
+function build() {
+	document.getElementById("text").innerHTML = "";
+	height = document.getElementById("height").value;	
+	var width = height * 2 - 1;
+	for (y=0; y < height; y++) {
+		for (x=0; x < width; x++) {
+			var mid = Math.ceil(width/2) - 1;
+			var val = (mid-y <= x && x <= mid+y) ? '#' : "_";
+			document.getElementById("text").innerHTML += val ;
+		}
+		document.getElementById("text").innerHTML += "<br>" ;
+}
+
+	
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+        color: white;
+        text-align: center;
+        margin: 5px 5px;
+        background-color: blue; 
+        font-size : 20px; 
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        padding: 20px 20px;
+    }
+.playButton {
+    color: black;
+    font-size: 30px;
+    background-color: grey;
+    padding: 20px 50px;
+    
+}
+</style>
+</head>
+    <p id="prompt"></p>
+    <body>
+        <div id="choice">
+
+        </div>
+        <button class="button playButton" color="black" onclick="playRock()">Play</button>
+        <p id='result'></p>
+<script>
+    var notice1 = "Choose a choice:";
+    var notice2 = "Please Select a Choice";
+    document.getElementById("prompt").innerHTML = notice1;
+    var selectedButton;
+    function displayDots(time){
+
+    }
+    
+    function select(button) {
+        
+        // change colours:
+
+        if (selectedButton != null){
+            selectedButton.style.backgroundColor = "blue";
+        }
+       
+        selectedButton = button;
+        selectedButton.style.backgroundColor = "red";
+    }
+
+    function playRock(){
+        if (selectedButton == null) {
+            document.getElementById("prompt").innerHTML = notice2;
+            return;
+        } 
+        else {
+            document.getElementById("prompt").innerHTML = notice1;
+       }
+        var com_choice = Math.floor(Math.random() * 3);
+        var result = document.getElementById("result");
+        result.innerHTML = `Computer plays ${choices[com_choice]}.<br>`;
+
+        var user_choice = selectedButton.value;
+        var draw = "It's a draw."
+        var win = "You won."
+        var lose = "You lost."
+
+        if (user_choice == 1){
+            if (com_choice == 1){
+                result.innerHTML += draw 
+            }else if (com_choice == 0){
+
+                result.innerHTML += win; 
+            }else {
+
+                result.innerHTML += lose; 
+            }
+        }else if (user_choice == 2){
+            if (com_choice == 1){
+                result.innerHTML += win; 
+            }else if (com_choice == 0){
+
+                result.innerHTML += lose; 
+            }else {
+
+                result.innerHTML += draw; 
+            }
+            
+        }else if (user_choice == 0){
+            if (com_choice == 1){
+                result.innerHTML += lose; 
+            }else if (com_choice == 0){
+
+                result.innerHTML += draw; 
+            }else {
+                result.innerHTML += win; 
+            }
+
+        }
+
+
+
+
+    }
+    var choices = {0: "Rock", 1: "Paper", 2: "Scissors"};
+    for (i=0; i < 3; i++) {
+        var button = `<button id="button${i}" class="button" onclick="select(this)" value=${i}> ${choices[i]}</button>`;
+        document.getElementById("choice").innerHTML += button ;
+
+    }
+    
+
+</script>
+    </body>
+
+</html>
