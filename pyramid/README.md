@@ -1,5 +1,19 @@
-# pyramid in various languages
+# Pseudo Code
+def main_func():
+  
 
+
+
+
+
+
+
+
+
+
+
+
+------------------
 ## C#
 Running in terminal...
 
