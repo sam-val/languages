@@ -55,3 +55,7 @@ while true:
       guess = guesses.pop()
  ```
           
+
+screenshots:
+## Python
+![Alt text](../../screenshots/hangman_python.png)
