@@ -1,5 +1,5 @@
 psudocode
-
+```
 hangman_img = [chars representing image of hangman]
 
 words_list = ['abc', 'def', etc]
@@ -53,5 +53,5 @@ while true:
       guessed_letters.add(letter)
   else:
       guess = guesses.pop()
-  
+ ```
           
