@@ -58,4 +58,4 @@ while true:
 
 screenshots:
 ## Python
-![Alt text](../../screenshots/hangman_python.png)
+![Alt text](../screenshots/hangman_python.png)
