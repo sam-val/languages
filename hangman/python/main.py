@@ -29,7 +29,7 @@ def init_state():
 
 
 def draw_hangman():
-    if len(guesses) == 8:
+    if len(guesses) == MAX_GUESSES:
         return
     w, h = 7,8
     img = hangman_img
