@@ -6,5 +6,5 @@ These are:
 2. Rock, Paper, Scissors
 3. Snake
 4. Hangman
-5. (Medium) Tetris
-6. (Medium) Find shortest path
+5. Piano
+6. (Medium) Tetris
