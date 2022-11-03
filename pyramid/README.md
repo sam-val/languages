@@ -11,7 +11,7 @@ def pyramid(height, width):
   make a '0' array with len: height * width
   for y in height:
     for x in width:
-      if (width - y) >= x >= y:
+      if (width - y - 1) >= x >= y:
         fill array[y][x] with 1
     
   
