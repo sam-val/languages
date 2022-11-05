@@ -45,9 +45,6 @@ func draw_hangman() {
 	w,h := 7,8
 	for y := 0; y < h; y++ {
 		for x := 0; x < w; x++ {
-			// if x == 0 {
-			// 	fmt.Print()
-			// }
 			val := hangman_img[y][x]
 			if val == 0 {
 				fmt.Print(" ")
@@ -62,7 +59,7 @@ func draw_hangman() {
 				fmt.Print(print_val)
 			}
 		}
-		fmt.Println("")
+		fmt.Println("") // new line
 	}
 }
 
