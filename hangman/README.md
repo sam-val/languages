@@ -16,7 +16,7 @@ def drawhangman():
 def drawwords():
     print(x for x in word if x in guessed_letters else '_')
 
-def getinorlose():
+def getwinorlose():
     if guesses.length == 0:
         return 'lose'
     if guessed_letters.length == set(word.length.remove(' '))
