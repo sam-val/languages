@@ -44,6 +44,10 @@ while True:
   else:
     snake_pos.push(new_head_pos)
     
+  // check if head out of board:
+  if out_of_board(new_head_pos):
+    new_head_pos = to_the_other_side(new_head_pos)
+    
   // check if on an apple:
   if new_head_pos == apple_pos:
     current_snake_length += 1
