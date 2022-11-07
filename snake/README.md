@@ -1,4 +1,4 @@
-## gameplay
+## rules
 - snake dies when it hits itself
 - gets apple, length += 1
 - if a part of its body moves out of board, it appears in the opposite side of the board
