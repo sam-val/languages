@@ -1,5 +1,5 @@
 ## rules
-- snake dies when it hits itself
+- length of snake resets if it hits itself
 - gets apple, length += 1
 - if a part of its body moves out of board, it appears in the opposite side of the board
 - size of board is 10x10
@@ -18,11 +18,15 @@ width, height = 10, 10
 pixel_length = 15
 board = [width*height]Coordinates
 
-current_snake_length = 3
+START_LENGTH = 3
+current_snake_length = START_LENGTH
 snake_pos = a queue of coordinates []Coordinates
 apple_pos = get_apple_pos() // get a random pos on board (not on snake's body)
 direction = 0 (1: left; 2: up; 3; right; 4; down)
 
+
+// init game
+make_board()
 
 // game loop
 while True:
@@ -40,14 +44,15 @@ while True:
   
   // check losing condition:
   if new_head_pos in snake_pos:
-    lose()
+    current_snake_length = START_LENGTH
   else:
+    // check if head out of board:
+    if out_of_board(new_head_pos):
+      new_head_pos = to_the_other_side(new_head_pos)
+      
     snake_pos.push(new_head_pos)
     
-  // check if head out of board:
-  if out_of_board(new_head_pos):
-    new_head_pos = to_the_other_side(new_head_pos)
-    
+
   // check if on an apple:
   if new_head_pos == apple_pos:
     current_snake_length += 1
