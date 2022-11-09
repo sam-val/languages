@@ -16,7 +16,7 @@ Coordinates struct {
 // important global variables
 width, height = 10, 10
 pixel_length = 15
-board = [width*height]Coordinates
+board = [width*height]Title/Image
 
 START_LENGTH = 3
 current_snake_length = START_LENGTH
