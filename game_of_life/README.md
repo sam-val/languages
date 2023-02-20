@@ -72,3 +72,6 @@ def draw(state, w, h):
       else:
         print(' ')
 ``` 
+## Gifs
+
+![game of life GIF](../screenshots/game_of_life_go.gif)
