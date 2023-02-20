@@ -1,5 +1,5 @@
 ## pseudocode
-
+```
 // consts
 const FPS
 const WIDTH
@@ -41,6 +41,26 @@ def compute(current_state, w, h) -> [][]bool:
               
   return new_state
  
+def count_neighbours(state, x, y):
+  def exists(state, x, y):
+    if x not in len(state[0]) or y not in len(state):
+      return False
+    if state[x][y] == True:
+      return True
+    return False
+    
+    
+  neighs = 0
+  // 8 neighbours:
+  neighbour_cors = [
+    (x-1, y-1), (x, y-1), (x+1, y-1), (x+1, y), (x+1, y+1), (x, y+1), (x-1, y+1), (x-1, y)
+  ]
+  
+  for a,b in neighbour_cors:
+      if exists(state, a, b):
+         neighs++
+         
+   return neighs
   
 def draw(state, w, h):
   // just print to console
@@ -51,4 +71,4 @@ def draw(state, w, h):
         print('#')
       else:
         print(' ')
-        
+``` 
