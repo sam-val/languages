@@ -7,4 +7,5 @@ These are:
 3. Snake
 4. Hangman
 5. Piano
-6. (Medium) Tetris
+6. Game of life
+7. (Medium) Tetris
