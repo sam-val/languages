@@ -19,4 +19,8 @@ migratedown:
 migratedown_ver:
 	migrate -path db/migrations -database "postgresql://root:root@localhost:5432/movies?sslmode=disable" -verbose down $(ver)
 
-.PHONY: makesql
+test:
+	go test -v -cover ./...
+
+.PHONY: makesql createdb dropdb migratedown migratedown_ver migrateup migrateup_ver
+

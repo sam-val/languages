@@ -8,13 +8,13 @@ CREATE TABLE "Movie" (
 CREATE TABLE "Filmmaker" (
   "id" bigserial PRIMARY KEY,
   "name" varchar NOT NULL,
-  "dob" date NOT NULL,
+  "dob" timestamptz NOT NULL,
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
 CREATE TABLE "Role" (
   "id" bigserial PRIMARY KEY,
-  "name" varchar NOT NULL,
+  "name" varchar UNIQUE NOT NULL,
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
