@@ -44,7 +44,9 @@ func TestGetFilmmaker(t *testing.T) {
 
 	require.NotEmpty(t, filmmaker2)
 	require.Equal(t, filmmaker.Name, filmmaker2.Name)
-	require.Equal(t, filmmaker.Dob, filmmaker2.Dob)
+	require.Equal(t, filmmaker.Dob.Day(), filmmaker2.Dob.Day())
+	require.Equal(t, filmmaker.Dob.Month(), filmmaker2.Dob.Month())
+	require.Equal(t, filmmaker.Dob.Year(), filmmaker2.Dob.Year())
 	require.Equal(t, filmmaker.CreatedAt, filmmaker2.CreatedAt)
 }
 
@@ -74,7 +76,9 @@ func TestUpdateFilmmaker(t *testing.T) {
 
 	require.Equal(t, filmmaker2.ID, arg.ID)
 	require.Equal(t, filmmaker2.Name, arg.Name)
-	require.Equal(t, filmmaker2.Dob, arg.Dob)
+	require.Equal(t, filmmaker.Dob.Day(), arg.Dob.Day())
+	require.Equal(t, filmmaker.Dob.Month(), arg.Dob.Month())
+	require.Equal(t, filmmaker.Dob.Year(), arg.Dob.Year())
 	require.Equal(t, filmmaker2.CreatedAt, filmmaker2.CreatedAt)
 }
 
