@@ -7,9 +7,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - crud/movie/go/**
-  pull_request:
-    branches: [ "main" ]
+      - crud_movie/go/**
 
 jobs:
 
