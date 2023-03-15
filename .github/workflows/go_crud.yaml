@@ -51,4 +51,4 @@ jobs:
       run: (cd crud_movie/go && make migrateup)
 
     - name: Test
-      run: (cd crud/movie/go && make test)
+      run: (cd crud_movie/go && make test)
