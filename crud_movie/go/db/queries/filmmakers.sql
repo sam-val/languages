@@ -23,6 +23,6 @@ SET name = $2, dob = $3
 WHERE id = $1
 RETURNING *;
 
--- name: DeleteFilmmaker :exec
+-- name: DeleteFilmmaker :execrows
 DELETE FROM "Filmmaker"
 WHERE id = $1;

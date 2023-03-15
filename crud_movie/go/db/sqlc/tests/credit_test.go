@@ -51,8 +51,9 @@ func TestGetCredit(t *testing.T) {
 
 func TestDeleteCredit(t *testing.T) {
 	credit := CreateRandomCredit(t)
-	err := testQueries.DeleteMovieCredit(context.Background(), credit.ID)
+	rows, err := testQueries.DeleteMovieCredit(context.Background(), credit.ID)
 	require.NoError(t, err)
+	require.Equal(t, int64(1), rows)
 
 	credit2, err := testQueries.GetMovieCredit(context.Background(), credit.ID)
 	require.EqualError(t, err, sql.ErrNoRows.Error())

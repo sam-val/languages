@@ -48,8 +48,9 @@ func TestGetFilmmaker(t *testing.T) {
 
 func TestDeleteFilmmaker(t *testing.T) {
 	filmmaker := CreateRandomFilmmaker(t)
-	err := testQueries.DeleteFilmmaker(context.Background(), filmmaker.ID)
+	rows, err := testQueries.DeleteFilmmaker(context.Background(), filmmaker.ID)
 	require.NoError(t, err)
+	require.Equal(t, int64(1), rows)
 
 	filmmaker2, err := testQueries.GetFilmmaker(context.Background(), filmmaker.ID)
 	require.EqualError(t, err, sql.ErrNoRows.Error())

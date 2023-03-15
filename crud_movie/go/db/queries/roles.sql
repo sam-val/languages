@@ -23,6 +23,6 @@ SET name = $2
 WHERE id = $1
 RETURNING *;
 
--- name: DeleteRole :exec
+-- name: DeleteRole :execrows
 DELETE FROM "Role"
 WHERE id = $1;

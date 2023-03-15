@@ -48,8 +48,9 @@ func TestGetMovie(t *testing.T) {
 
 func TestDeleteMovie(t *testing.T) {
 	movie := CreateRandomMovie(t)
-	err := testQueries.DeleteMovie(context.Background(), movie.ID)
+	rows, err := testQueries.DeleteMovie(context.Background(), movie.ID)
 	require.NoError(t, err)
+	require.Equal(t, int64(1), rows)
 
 	movie2, err := testQueries.GetMovie(context.Background(), movie.ID)
 	require.EqualError(t, err, sql.ErrNoRows.Error())

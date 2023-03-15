@@ -41,8 +41,9 @@ func TestGetRole(t *testing.T) {
 
 func TestDeleteRole(t *testing.T) {
 	role := CreateRandomRole(t)
-	err := testQueries.DeleteRole(context.Background(), role.ID)
+	rows, err := testQueries.DeleteRole(context.Background(), role.ID)
 	require.NoError(t, err)
+	require.Equal(t, int64(1), rows)
 
 	role2, err := testQueries.GetRole(context.Background(), role.ID)
 	require.EqualError(t, err, sql.ErrNoRows.Error())

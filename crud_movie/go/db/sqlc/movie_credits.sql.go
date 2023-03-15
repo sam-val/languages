@@ -37,14 +37,17 @@ func (q *Queries) CreateMovieCredit(ctx context.Context, arg CreateMovieCreditPa
 	return i, err
 }
 
-const deleteMovieCredit = `-- name: DeleteMovieCredit :exec
+const deleteMovieCredit = `-- name: DeleteMovieCredit :execrows
 DELETE FROM "MovieCredits"
 WHERE id = $1
 `
 
-func (q *Queries) DeleteMovieCredit(ctx context.Context, id int64) error {
-	_, err := q.db.ExecContext(ctx, deleteMovieCredit, id)
-	return err
+func (q *Queries) DeleteMovieCredit(ctx context.Context, id int64) (int64, error) {
+	result, err := q.db.ExecContext(ctx, deleteMovieCredit, id)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
 }
 
 const getMovieCredit = `-- name: GetMovieCredit :one

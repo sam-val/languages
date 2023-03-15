@@ -36,14 +36,17 @@ func (q *Queries) CreateFilmmaker(ctx context.Context, arg CreateFilmmakerParams
 	return i, err
 }
 
-const deleteFilmmaker = `-- name: DeleteFilmmaker :exec
+const deleteFilmmaker = `-- name: DeleteFilmmaker :execrows
 DELETE FROM "Filmmaker"
 WHERE id = $1
 `
 
-func (q *Queries) DeleteFilmmaker(ctx context.Context, id int64) error {
-	_, err := q.db.ExecContext(ctx, deleteFilmmaker, id)
-	return err
+func (q *Queries) DeleteFilmmaker(ctx context.Context, id int64) (int64, error) {
+	result, err := q.db.ExecContext(ctx, deleteFilmmaker, id)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
 }
 
 const getFilmmaker = `-- name: GetFilmmaker :one

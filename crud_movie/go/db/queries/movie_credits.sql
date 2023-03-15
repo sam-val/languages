@@ -17,6 +17,6 @@ SET movie_id = $2, filmmaker_id = $3, role_id = $4
 WHERE id = $1
 RETURNING *;
 
--- name: DeleteMovieCredit :exec
+-- name: DeleteMovieCredit :execrows
 DELETE FROM "MovieCredits"
 WHERE id = $1;

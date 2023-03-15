@@ -23,6 +23,6 @@ SET name = $2, year = $3
 WHERE id = $1
 RETURNING *;
 
--- name: DeleteMovie :exec
+-- name: DeleteMovie :execrows
 DELETE FROM "Movie"
 WHERE id = $1;
