@@ -22,7 +22,9 @@ func CreateRandomFilmmaker(t *testing.T) db.Filmmaker {
 	require.NoError(t, err)
 
 	require.Equal(t, filmmaker.Name, arg.Name)
-	require.Equal(t, filmmaker.Dob, arg.Dob)
+	require.Equal(t, filmmaker.Dob.Day(), arg.Dob.Day())
+	require.Equal(t, filmmaker.Dob.Month(), arg.Dob.Month())
+	require.Equal(t, filmmaker.Dob.Year(), arg.Dob.Year())
 
 	require.NotZero(t, filmmaker.CreatedAt)
 	require.NotZero(t, filmmaker.ID)
