@@ -76,9 +76,9 @@ func TestUpdateFilmmaker(t *testing.T) {
 
 	require.Equal(t, filmmaker2.ID, arg.ID)
 	require.Equal(t, filmmaker2.Name, arg.Name)
-	require.Equal(t, filmmaker.Dob.Day(), arg.Dob.Day())
-	require.Equal(t, filmmaker.Dob.Month(), arg.Dob.Month())
-	require.Equal(t, filmmaker.Dob.Year(), arg.Dob.Year())
+	require.Equal(t, filmmaker2.Dob.Day(), arg.Dob.Day())
+	require.Equal(t, filmmaker2.Dob.Month(), arg.Dob.Month())
+	require.Equal(t, filmmaker2.Dob.Year(), arg.Dob.Year())
 	require.Equal(t, filmmaker2.CreatedAt, filmmaker2.CreatedAt)
 }
 
