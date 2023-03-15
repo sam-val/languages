@@ -6,10 +6,10 @@ name: ci-test
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - crud/movie/go/**
   pull_request:
     branches: [ "main" ]
-  paths:
-    - crud/movie/go/**
 
 jobs:
 
