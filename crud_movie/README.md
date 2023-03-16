@@ -2,7 +2,7 @@
 
 ## Database schema:
 
-![model schema](movies_diagram.png)
+<img src="movies_diagram.png" alt="Image" width="500">
 
 ## Endpoints:
 `GET /movies`: To retrieve a list of movies.
