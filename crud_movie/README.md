@@ -1,9 +1,5 @@
 #crud movie database
 
-## Database schema:
-
-<img src="movies_diagram.png" alt="Image" width="500">
-
 ## Endpoints:
 `GET /movies`: To retrieve a list of movies.
 
@@ -50,6 +46,8 @@
 `DELETE /credit/:id`: To delete a movie credit.
 
 
+## Database schema:
 
+<img src="movies_diagram.png" alt="Image" width="500">
 
 
